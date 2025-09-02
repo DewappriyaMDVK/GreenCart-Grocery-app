@@ -7,10 +7,15 @@ import { useAppContext } from "./Context/appContext";
 import Login from "./Components/Login";
 import { Toaster } from "react-hot-toast";
 import AllProducts from "./Pages/AllProducts";
+import ProductCatogory from "./Pages/ProductCategory";
+
+
 function App() {
   const isSellerPath = useLocation().pathname.includes("seller");
   const {showUserLogin} = useAppContext()
+
   return (
+
     <div>
       {isSellerPath? null : <NaveBar/>}
       {showUserLogin? <Login/> : null }
@@ -18,11 +23,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/products" element={<AllProducts/>}/>
+          <Route path="/products/:category" element={<ProductCatogory/>}/>
         </Routes>
         <Toaster position="top-right" reverseOrder={false} />
       </div>
       {!isSellerPath && <Footer/>}
     </div>
+    
   )
 }
 
