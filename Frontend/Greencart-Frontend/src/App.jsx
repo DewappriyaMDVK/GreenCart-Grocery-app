@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import NaveBar from "./Components/naveBar"
+import NaveBar from "./Components/NaveBar"
 import Home from "./Pages/Home"
 import { useLocation } from "react-router-dom"
 import Footer from "./Components/Footer";

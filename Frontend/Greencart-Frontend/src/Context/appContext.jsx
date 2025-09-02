@@ -16,6 +16,7 @@ export const AppContextProvider = ({children})=>{
     const [products, setProducts] = useState([]);
     const [loaded,setLoaded] = useState(false);
     const [cartItems, setCartItems] = useState({})
+    const [searchQuary, setsearchQuary] = useState([]);
 
     //fatch product data
     const fatchProducts = async ()=>{
@@ -64,8 +65,8 @@ export const AppContextProvider = ({children})=>{
             
     },[loaded])
 
-    const value = {navigate,user,isSeller,products,showUserLogin,currency,cartItems,
-        updateCartitem,removeFromCart,addToCart,setIsSeller,setShowUserLogin,setUser,setCartItems}
+    const value = {navigate,user,isSeller,products,showUserLogin,currency,cartItems,searchQuary,
+        updateCartitem,removeFromCart,addToCart,setIsSeller,setShowUserLogin,setUser,setCartItems,setsearchQuary}
 
     return <AppContext.Provider value={value}>
         {children}
