@@ -34,7 +34,7 @@ export default function NaveBar(){
                     <button className="absolute -top-2 -right-3 text-xs text-white bg-primary w-[18px] h-[18px] rounded-full cursor-pointer">3</button>
                 </div>
                 {!user?
-                    (<button onClick={()=>{setUser(true) 
+                    (<button onClick={()=>{
                     setShowUserLogin(true)}} 
                     className="cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull transition text-white rounded-[1px]">
                         Login
