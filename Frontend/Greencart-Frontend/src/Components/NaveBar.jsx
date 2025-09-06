@@ -6,7 +6,7 @@ import { AppContextProvider, useAppContext } from "../Context/appContext"
 export default function NaveBar(){
 
     const [open, setOpen] = React.useState(false)
-    const {user, setUser, searchQuary, setShowUserLogin, setsearchQuary, navigate} = useAppContext()
+    const {user, setUser, searchQuary, setShowUserLogin, setsearchQuary, navigate, getCartCount} = useAppContext()
 
     const logout = async()=>{setUser(null),setShowUserLogin(false),navigate("/")}
 
@@ -38,7 +38,7 @@ export default function NaveBar(){
 
                 <div  onClick={()=>{navigate("/cart")}} className="relative cursor-pointer">
                     <img src={assets.cart_icon} alt="cart" className="w-6 opacity-80"/>
-                    <button className="absolute -top-2 -right-3 text-xs text-white bg-primary w-[18px] h-[18px] rounded-full cursor-pointer">3</button>
+                    <button className="absolute -top-2 -right-3 text-xs text-white bg-primary w-[18px] h-[18px] rounded-full cursor-pointer">{getCartCount()}</button>
                 </div>
                 {!user?
                     (<button onClick={()=>{
@@ -58,10 +58,17 @@ export default function NaveBar(){
                 
             </div>
 
-            <button onClick={() => open ? setOpen(false) : setOpen(true)} aria-label="Menu" className="sm:hidden">
-                {/* Menu Icon SVG */}
-                <img src={assets.menu_icon} alt="menu icon"/>
-            </button>
+            
+            <div className="flex items-center gap-6 sm:hidden">
+                <div  onClick={()=>{navigate("/cart")}} className="relative cursor-pointer">
+                    <img src={assets.cart_icon} alt="cart" className="w-6 opacity-80"/>
+                    <button className="absolute -top-2 -right-3 text-xs text-white bg-primary w-[18px] h-[18px] rounded-full cursor-pointer">{getCartCount()}</button>
+                </div>
+                <button onClick={() => open ? setOpen(false) : setOpen(true)} aria-label="Menu" className="">
+                    {/* Menu Icon SVG */}
+                    <img src={assets.menu_icon} alt="menu icon"/>
+                </button>
+            </div>
 
             {/* Mobile Menu */}
             {open &&

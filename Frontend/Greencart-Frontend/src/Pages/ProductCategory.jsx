@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { categories } from '../assets/assets.js';
 import ProductCard from '../Components/ProductCard.jsx';
 
-function ProductCatogory() {
+function ProductCategory() {
 
     const {products} = useAppContext()
     const {category} = useParams()
@@ -38,4 +38,4 @@ function ProductCatogory() {
   )
 }
 
-export default ProductCatogory;
+export default ProductCategory;

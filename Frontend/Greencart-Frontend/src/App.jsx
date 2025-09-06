@@ -8,6 +8,8 @@ import Login from "./Components/Login";
 import { Toaster } from "react-hot-toast";
 import AllProducts from "./Pages/AllProducts";
 import ProductCatogory from "./Pages/ProductCategory";
+import ProductDetails from "./Pages/ProductDetails";
+import Cart from "./Pages/Cart";
 
 
 function App() {
@@ -23,7 +25,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/products" element={<AllProducts/>}/>
+          <Route path="/products/:category/:id" element={<ProductDetails/>}/>
           <Route path="/products/:category" element={<ProductCatogory/>}/>
+          <Route path="/cart" element={<Cart/>}/>
         </Routes>
         <Toaster position="top-right" reverseOrder={false} />
       </div>
