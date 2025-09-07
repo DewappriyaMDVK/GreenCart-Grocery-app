@@ -10,6 +10,7 @@ import AllProducts from "./Pages/AllProducts";
 import ProductCatogory from "./Pages/ProductCategory";
 import ProductDetails from "./Pages/ProductDetails";
 import Cart from "./Pages/Cart";
+import AddAddress from "./Pages/AddAddress";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/products/:category/:id" element={<ProductDetails/>}/>
           <Route path="/products/:category" element={<ProductCatogory/>}/>
           <Route path="/cart" element={<Cart/>}/>
+          <Route path="/addAddress" element={<AddAddress/>}/>
         </Routes>
         <Toaster position="top-right" reverseOrder={false} />
       </div>
