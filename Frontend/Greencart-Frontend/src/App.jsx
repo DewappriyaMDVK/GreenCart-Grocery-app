@@ -11,6 +11,8 @@ import ProductCatogory from "./Pages/ProductCategory";
 import ProductDetails from "./Pages/ProductDetails";
 import Cart from "./Pages/Cart";
 import AddAddress from "./Pages/AddAddress";
+import MyOrders from "./Pages/MyOrders";
+
 
 
 function App() {
@@ -30,6 +32,7 @@ function App() {
           <Route path="/products/:category" element={<ProductCatogory/>}/>
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/addAddress" element={<AddAddress/>}/>
+          <Route path="/myorders" element={<MyOrders/>}/>
         </Routes>
         <Toaster position="top-right" reverseOrder={false} />
       </div>
